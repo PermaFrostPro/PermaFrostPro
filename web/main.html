@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Permafrost Pro
+        </title>
+        <script src="eel.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        // Функция, которая будет вызываться при отправке формы
+        async function onSubmit() {
+            var file = document.getElementById("csv_file").files[0];
+            
+            function readTextFile(file, callback) {
+                let reader = new FileReader();
+                reader.onload = function(event) {
+                    let contents = event.target.result;
+                    callback(contents);
+                };
+                reader.readAsText(file);
+            }
+            readTextFile(file, function(contents){
+                eel.give_res(contents)(function(result) {
+                // Отображаем карту в iframe
+                document.getElementById("map").src = result;
+            });
+            });
+        };
+        </script>
+        <link rel="icon" type="image/png" href="/neural.png">
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/
+        css2family=Roboto:wght@300;400:500display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="title">
+            Система мониторинга | IT oil champ
+        </h1>
+        
+        <form onsubmit="onSubmit(); return false;">
+          <label id="text" for="csv_file">Выберите CSV-файл:</label>
+          <input type="file" id="csv_file" name="csv_file"><br>
+    
+          <input type="submit" id="submit" value="Отобразить карту">
+        </form>
+    
+        <iframe id="map" width="100%" height="600" frameborder="0"></iframe>
+    </body>
+</html>
+
+
+

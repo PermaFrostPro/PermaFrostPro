@@ -1,0 +1,88 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: white;
+
+    color: black;
+    padding: 50px;
+}
+
+#csv_file {
+    display: block;
+    border: none;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    padding: 20px;
+    color: black;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#csv_file::placeholder {
+    color: rgba(0, 0, 0, .5)
+}
+
+#text {
+    display: block;
+    border: none;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    padding: 20px;
+    color: black;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#text::placeholder {
+    color: rgba(0, 0, 0, .5)
+}
+
+#title {
+    display: block;
+    border: none;
+    background: #16BFFD;
+    background: -webkit-linear-gradient(to right , #CB3066, #FF5F6D);
+    background: linear-gradient(to right, #CB3066, #FF5F6D);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#title::placeholder {
+    color: rgba(0, 0, 0, .5)
+}
+
+#submit{
+    display: block;
+    border: none;
+    background: #ff5f6d;
+    background: -webkit-linear-gradient(to right , #004e92, #FF5F6D);
+    background: linear-gradient(to right, #004e92, #FF5F6D);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#submit:hover {
+    opacity: .9 ;
+}
+
